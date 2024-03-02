@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Materia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <form th:action="@{/materias/ingresarMateria}" th:object="${materia}" th:method="POST">
+            <table class="table table-dark table-striped-columns">
+                <tr>
+                    <td><label>Nombre:</label></td>
+                    <td><input class="form-control" type="text" th:field="${materia.nombre}"></td>
+                </tr>
+                <tr>
+                    <td><label>Código:</label></td>
+                    <td><input class="form-control" type="text" th:field="${materia.codigo}"></td>
+                </tr>
+                <tr>
+                    <td><label>Número de créditos:</label></td>
+                    <td><input class="form-control" type="text" th:field="${materia.numeroCreditos}"></td>
+                </tr>
+                <tr>
+                    <td><label>Cédula del Profesor:</label></td>
+                    <td><input class="form-control" type="text" th:field="${materia.cedulaProfesor}"></td>
+                </tr>
+            </table>
+
+            <p></p>
+
+            <button class="btn btn-danger" type="submit">Guardar</button>
+        </form>
+
+        <p></p>
+    </div>
+</body>
+
+</html>
